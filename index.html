@@ -4,73 +4,41 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Mejia Barona Jesus Emmanuel 3CV51</title>
-        <link href="css/estilos.css" rel="stylesheet">
+        <link href="estilos.css" rel="stylesheet">
             <script type="module" src="cmp/mi-footer.js"></script> 
     </head>
     <body>
-        <form id="formSaludo">
+        <form id="form"  action="javascript:procesa()" >
             <h1>INGRESA LOS DATOS:</h1>
             <p>
-                <label>
-                    Boleta:
-                    <input type="text" name="boleta">
-                </label>
+                <label for="Nombre"> Nombre: </label><br>
+			<input type="text" name="Nombre" id="Nombre" required>
+			<output id="salida_nombre"></output>
             </p>
             <p>
-                <label>
-                    Nombre:
-                    <input type="text" name="nombre">
-                </label>
+                <label for="Boleta">Boleta</label><br>
+			<input type="text" name="Boleta" id="Boleta" required>
+			<output id="salida_boleta"></output>
             </p>
             <p>
-                <label>
-                    Apellido Paterno:
-                    <input type="text" name="apellidoP">
-                </label>
+                <label for="Grupo" >Grupo</label><br>
+			<input type="text" name="Grupo" id="Grupo" required>
+			<output id="salida_grupo"></output>
             </p>
             <p>
-                <label>
-                    Apellido Materno:
-                    <input type="text" name="apellidoM">
-                </label>
+                <label for="Materia" >Materia</label><br>
+			<input type="text" name="Materia" id="Materia" required>
+			<output id="salida_materia"></output>
             </p>
             <p>
-                <label>
-                    Grupo:
-                    <input type="text" name="grupo">
-                </label>
+                <label for="Fecha" >Fecha</label><br>
+			<input type="date" name="Fecha" id="Fecha" required>
+		    <output id="salida_fecha"></output>
             </p>
-            <p>
-                <label>
-                    Materia:
-                    <input type="text" name="materia">
-                </label>
-            </p>
-            <p>
-                <label> 
-                   Fecha:
-                   <input type="date" name="fecha">  
-                </label>
-            </p>
-            <p><button>Enviar</button></p>
-            <p><output name="Salida"></output></p>
+            <p><button type="submit" value="Procesar">ENVIAR</button></p>
         </form>
     <mi-footer></mi-footer>
-    <script type="module">
-        import { CtrlSaludo } from "js/CtrlSaludo.js";
-        const ctrlSaludo = new CtrlSaludo();
-        formSaludo.addEventListener("submit", evt => {
-            try {
-                evt.preventDefault();
-                const datos = new FormData(FormSaludo);
-                const nombre = datos.get("nombre");
-                const saludo = CtrlSaludo.calcularSaludo(nombre);
-                formSaludo.salida.value = saludo;
-            } catch (error) {
-                console.log(error);
-                formSaludo.salida.value = error.message;
-            }
-        });
+    <script  type="text/javascript" src="js.js">
         </script>
     </body>
 </html>
